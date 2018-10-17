@@ -134,10 +134,14 @@ func printBytes(bytes []byte, prevBytes []byte) {
 				} else {
 					fmt.Printf("%02X", v)
 				}
+				fmt.Print(" ")
 			}
 			fmt.Println()
 		} else {
-			fmt.Printf("%X\n", bytes)
+			for _, v := range bytes {
+				fmt.Printf("%02X ", v)
+			}
+			fmt.Println()
 		}
 	}
 	if BitDump {
