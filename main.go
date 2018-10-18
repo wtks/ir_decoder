@@ -100,7 +100,10 @@ func main() {
 
 					datum = datum<<1 | bit
 
-					if dc == 20 || dc == 24 {
+					if dc == 20 {
+						datum = reverseBit4(datum)
+					} else if dc == 24 {
+						datum = (datum & 0xF0) | reverseBit4(datum&0x0F)
 						frame = append(frame, reverseBit4(datum))
 						datum = 0
 					} else if dc%8 == 0 {
