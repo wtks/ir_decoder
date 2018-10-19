@@ -16,5 +16,8 @@ IR Decoderは家製協(AEHA)フォーマット用赤外線デコーダーです�
 + `-skip [hexString]`: 指定したhexStringのバイト列のフレームを無視する。
 + `-l`: 有効なフレームのバイト列の長さ
 
+## ダウンロード
+[Github Releases](https://github.com/wtks/ir_decoder/releases)
+
 ## ライセンス
 MIT License
