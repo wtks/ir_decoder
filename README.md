@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/wtks/ir_decoder.svg?branch=master)](https://travis-ci.org/wtks/ir_decoder)
+
 # IR Decoder
 IR Decoderは家製協(AEHA)フォーマット用赤外線デコーダーです。
 
