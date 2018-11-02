@@ -1,19 +1,18 @@
 language: go
-
 go:
   - 1.11
-
 env:
   - GO111MODULE=on
-
 before_install:
   - go mod download
-
-# calls goreleaser
 deploy:
   - provider: script
     skip_cleanup: true
     script: curl -sL https://git.io/goreleaser | bash
     on:
       tags: true
-      condition: $TRAVIS_OS_NAME = linux
+      condition: "$TRAVIS_OS_NAME = linux"
+notifications:
+  email: false
+  slack:
+    secure: DB9AkclhNQgpNoUVGa9TZeTnWQJSVwzV2zoto/qJAfnweW13J0GWhAaEfW1lPUY6piVTedEwsGPILn3/eftxBo9Akixlyh/dPa/Frp8kP0Rj1O1MZeBcr6nzPR4C099v87g7iSCr4WIvH/xRf/7MzjquZVfMtouwjj2+Ej5aLwQAlFuxnvpxwejPjbOXv6XJDurAGpgENgSRpStEqLMFe6g7TzFBKWHLjSzPtmGcEEQL44czfe4db9At08nA8ZGJaWa5DS0g+e3LXN7zpeG51DpQNDpZZP1tVa2mAgsvFAjaNQ6+7XYnLwEWPDhKwaUKO6rtDII2IOTvVO/Lh9tdNF6/8ED1uzSsxkSFM81NSNjSN81qpx2BTw+cIYJqWhG+15UPPXXVhOVFAx6Szg2I6PT/imSengDy6+FlsOl/qPfzsjFncSdxwJVHjpAUVEgPBxJJIv/Za8IvmUavjJjrM8ete6kK38CXBEvFAMf0iLGiIC8gtmxLeCReIXyq2UvNZdK08PWjBf8JRlzMJn1IBdwpJWjfcrwJTn2C8rYjkzkz3Uf92FFdpQGe6N1g6F5nUdFmcgI/XN85+iU9GJZMJLGot/2vUUCSa2eB5qGjfiuy9nf9T+AM6CVIdmOmjq7bSmsv/bFV2O0HBIcvyUJYlZM/1jaadcWhM6zsQqht9wM=
